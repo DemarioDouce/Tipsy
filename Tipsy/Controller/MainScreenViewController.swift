@@ -19,9 +19,10 @@ class MainScreenViewController: UIViewController {
     
     //Variables
     var billTotal: Float?
-    var tipPercentage = 0.0
+    var tipPercentage: Float = 0.0
     var splitNumVal = 0
-    var billTotalCal = 0.0
+    var billTotalCal: Float = 0.0
+    var tipTotal: Float = 0.0
     
     
     
@@ -41,7 +42,7 @@ class MainScreenViewController: UIViewController {
         
         tipPercentage = 0.0
         
-        print(tipPercentage)
+        
     }
     
     //Second tip btn
@@ -53,7 +54,7 @@ class MainScreenViewController: UIViewController {
         
         tipPercentage = 0.1
         
-        print(tipPercentage)
+        
     }
     
     //Third tip btn
@@ -65,7 +66,7 @@ class MainScreenViewController: UIViewController {
         
         tipPercentage = 0.2
         
-        print(tipPercentage)
+        
     }
     
     
@@ -83,7 +84,9 @@ class MainScreenViewController: UIViewController {
         
         billTotal = Float(billTotalTbx.text!)
         
-        print(billTotal ?? 0.0)
+        tipTotal = billTotal! * tipPercentage
+        
+        billTotalCal = (billTotal! + tipTotal) / Float(splitNumVal)
         
         //Open segue
         self.performSegue(withIdentifier: "showResult", sender: self)
@@ -93,7 +96,11 @@ class MainScreenViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showResult"{
             
-            let destinationVC = segue.destination as! ResultViewController
+            let ResultVC = segue.destination as! ResultViewController
+            
+            ResultVC.result = "\(billTotalCal)"
+            ResultVC.resultDetail = "Split between \(splitNumVal) people, with \(tipPercentage) tip."
+            
             
         }
     }

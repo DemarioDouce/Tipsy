@@ -14,21 +14,23 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var resultLbl: UILabel!
     @IBOutlet weak var resultDetailLbl: UILabel!
     
+    //Variables
+    var result: String?
+    var resultDetail: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        resultLbl.text = result
+        resultDetailLbl.text = resultDetail
 
-        // Do any additional setup after loading the view.
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func recalBtn(_ sender: UIButton) {
+     
+        //Dismiss the view
+        self.dismiss(animated: true, completion: nil)
     }
-    */
-
+    
 }
