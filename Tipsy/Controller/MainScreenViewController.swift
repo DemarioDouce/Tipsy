@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainScreenViewController: UIViewController {
+class MainScreenViewController: UIViewController, UITextFieldDelegate {
     
     //UI elements
     @IBOutlet weak var billTotalTbx: UITextField!
@@ -29,7 +29,7 @@ class MainScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        self.billTotalTbx.delegate = self
     }
     
     //First tip btn
@@ -98,11 +98,18 @@ class MainScreenViewController: UIViewController {
             
             let ResultVC = segue.destination as! ResultViewController
             
-            ResultVC.result = "\(billTotalCal)"
+            ResultVC.result = String(format: "%.1f", billTotalCal)
             ResultVC.resultDetail = "Split between \(splitNumVal) people, with \(tipPercentage) tip."
             
             
         }
+    }
+    
+    //Dismiss keyboard that has done keyword
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
 }
