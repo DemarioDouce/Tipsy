@@ -84,9 +84,9 @@ class MainScreenViewController: UIViewController {
         
         billTotal = Float(billTotalTbx.text!)
         
-        tipTotal = billTotal! * tipPercentage
+        tipTotal = billTotal ?? 0.0 * tipPercentage
         
-        billTotalCal = (billTotal! + tipTotal) / Float(splitNumVal)
+        billTotalCal = (billTotal ?? 0.0 + tipTotal) / Float(splitNumVal)
         
         //Open segue
         self.performSegue(withIdentifier: "showResult", sender: self)

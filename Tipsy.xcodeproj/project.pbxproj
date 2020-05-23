@@ -58,7 +58,6 @@
 		ADB689512326708D006D4E2B /* Tipsy */ = {
 			isa = PBXGroup;
 			children = (
-				AFD0A0B6247718F500D66144 /* Model */,
 				AFD0A0B72477190400D66144 /* View */,
 				AFD0A0B82477191300D66144 /* Controller */,
 				ADB689522326708D006D4E2B /* AppDelegate.swift */,
@@ -68,13 +67,6 @@
 				ADB689602326708E006D4E2B /* Info.plist */,
 			);
 			path = Tipsy;
-			sourceTree = "<group>";
-		};
-		AFD0A0B6247718F500D66144 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		AFD0A0B72477190400D66144 /* View */ = {
