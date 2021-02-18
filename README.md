@@ -1,6 +1,6 @@
 # Tipsy
 ---
 ## Screenshot
-![Homepage mockup image.](/Mockups/MockupTipsy.png)
+![Mockup image.](/Mockups/MockupTipsy.png)
 ---
 
